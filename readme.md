@@ -23,7 +23,7 @@ During the development a lot of planning has gone into creating a nice streamlin
 
 ```php
 // Get a connection
-$connection = Monga::connection($dns, $connectionOptions);
+$connection = Monga::connection($dsn, $connectionOptions);
 
 // Get the database
 $database = $connection->database('db_name');

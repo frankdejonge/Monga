@@ -66,13 +66,21 @@ class QueryWhereTests extends PHPUnit_Framework_TestCase
 	public function testAndWhere()
 	{
 		$this->query->andWhere('name', 'John');
+		$this->query->andWhere('surname', null);
+		$this->query->andWhere('false', false);
+		$this->query->andWhere('zero', 0);
 
 		$expected = array(
 			'$or' => array(
 				array(
 					'$and' => array(
-						array('name' => 'John'),
-					)
+						array(
+							'name' => 'John',
+							'surname' => null,
+							'false' => false,
+							'zero' => 0
+						),
+					),
 				)
 			)
 		);

@@ -81,11 +81,12 @@ class Cursor implements \Countable, \IteratorAggregate
 	/**
 	 * Returns the result as an array
 	 *
-	 * @return  array  the iterator as array
+	 * @param   string  $method     method name
+	 * @return  boolean	$useKeys	use the iterator element keys as index
 	 */
-	public function toArray()
+	public function toArray($useKeys = false)
 	{
-		return iterator_to_array($this->getIterator());
+		return iterator_to_array($this->getIterator(), $useKeys);
 	}
 
 	/**
